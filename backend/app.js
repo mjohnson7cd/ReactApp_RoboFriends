@@ -18,8 +18,19 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
         robosCollection.findOneAndUpdate(req.params)
           .catch(error => console.error(error))
       })
+
+      app.get('/robos/:id', (req, res) => { 
+        robosCollection.find(req.params)
+          .catch(error => console.error(error))
+      })
+
+      app.get('/robos', (req, res) => { 
+        const votes = robosCollection.find().toArray
+        res.send(votes.reduce((a, b) => a+b) / votes.length)
+          .catch(error => console.error(error))
+      })
   
-    
+      
       
 
 
