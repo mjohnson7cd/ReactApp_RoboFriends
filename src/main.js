@@ -149,3 +149,13 @@ DuBuque.addEventListener('click', _ => {
         window.location.reload(true)
       })
 })
+
+// use this to load an array of every robot.
+
+// fetch("/robos")
+// .then(function(response) {
+//   if (!response.ok) {
+//     throw new Error("HTTP error, status = " + response.status);
+//   }
+//   return response;
+// })
